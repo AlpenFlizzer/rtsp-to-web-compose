@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+    deepch:
+        container_name: rtsp-to-web
+        network_mode: host
+        image: 'ghcr.io/deepch/rtsptoweb:latest'
+        restart: always
+        volumes:
+            - "./config/config.json:/config/config.json"
+            - "/etc/localtime:/etc/localtime:ro"
+            - "/etc/timezone:/etc/timezone:ro"
